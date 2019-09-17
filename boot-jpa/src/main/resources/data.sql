@@ -1,0 +1,5 @@
+insert into Alien values (101, 'Suresh', 'Java')
+insert into Alien values (102, 'Amit', 'Python')
+insert into Alien values (103, 'Vivek', 'Spring')
+insert into Alien values (104, 'Rahul', 'Java')
+insert into Alien values (105, 'Sonu', 'SharePoint')
