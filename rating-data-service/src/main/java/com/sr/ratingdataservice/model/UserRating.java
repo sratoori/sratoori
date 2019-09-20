@@ -4,16 +4,23 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 @Entity
 public class UserRating {
 
     @Id
+    @Column(name = "USER_ID", unique = true, nullable = false)
 	private String userId;
     private String name;
-    @OneToMany
+    
+    @OneToMany(targetEntity=Rating.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "USER_ID")
     private List<Rating> ratings = new ArrayList<>();
 
     public String getUserId() {
@@ -39,10 +46,4 @@ public class UserRating {
     public void setRatings(List<Rating> ratings) {
         this.ratings = ratings;
     }
-
-	/*
-	 * public void initData(String userId) { this.setUserId(userId);
-	 * this.setRatings(Arrays.asList( new Rating("100", 3), new Rating("200", 4) ));
-	 * }
-	 */
 }
