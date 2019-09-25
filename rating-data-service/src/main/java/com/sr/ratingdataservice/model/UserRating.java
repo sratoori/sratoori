@@ -17,7 +17,7 @@ public class UserRating {
     @Id
     @Column(name = "USER_ID", unique = true, nullable = false)
 	private String userId;
-    private String name;
+//    private String name;
     
     @OneToMany(targetEntity=Rating.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "USER_ID")
@@ -31,13 +31,11 @@ public class UserRating {
         this.userId = userId;
     }
 
-    public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
+	/*
+	 * public String getName() { return name; }
+	 * 
+	 * public void setName(String name) { this.name = name; }
+	 */
 
 	public List<Rating> getRatings() {
         return ratings;

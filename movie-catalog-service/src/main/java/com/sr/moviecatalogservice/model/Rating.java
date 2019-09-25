@@ -1,13 +1,6 @@
 package com.sr.moviecatalogservice.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
-@Entity
 public class Rating {
-	@Id
 	private String movieId;
 	private int rating;
 
